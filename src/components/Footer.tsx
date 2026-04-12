@@ -1,0 +1,51 @@
+import { Link } from "react-router-dom";
+import { Phone, MapPin, Mail } from "lucide-react";
+
+const Footer = () => (
+  <footer className="bg-secondary border-t border-border">
+    <div className="container mx-auto section-padding">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div>
+          <h3 className="font-heading text-2xl font-bold gradient-gold-text mb-4">DD Events</h3>
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            Premium catering & complete A to Z event management services in Tirupur. Making your celebrations unforgettable.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-heading text-lg font-semibold text-foreground mb-4">Quick Links</h4>
+          <div className="flex flex-col gap-2">
+            {["Home", "About", "Services", "Gallery", "Contact"].map((l) => (
+              <Link
+                key={l}
+                to={l === "Home" ? "/" : `/${l.toLowerCase()}`}
+                className="text-muted-foreground text-sm hover:text-primary transition-colors"
+              >
+                {l}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h4 className="font-heading text-lg font-semibold text-foreground mb-4">Contact</h4>
+          <div className="flex flex-col gap-3 text-sm text-muted-foreground">
+            <a href="tel:6381459317" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Phone size={14} className="text-primary" /> 6381459317
+            </a>
+            <a href="tel:8489308707" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Phone size={14} className="text-primary" /> 8489308707
+            </a>
+            <div className="flex items-start gap-2">
+              <MapPin size={14} className="text-primary mt-0.5 shrink-0" />
+              <span>Tirupur, Tamil Nadu, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="border-t border-border mt-12 pt-8 text-center text-xs text-muted-foreground">
+        © {new Date().getFullYear()} DD Event Management & Catering Boys. All rights reserved.
+      </div>
+    </div>
+  </footer>
+);
+
+export default Footer;
