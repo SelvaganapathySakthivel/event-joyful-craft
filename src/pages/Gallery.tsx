@@ -54,8 +54,8 @@ const Gallery = () => {
               onClick={() => setFilter(cat)}
               className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
                 filter === cat
-                  ? "gradient-gold-bg text-primary-foreground"
-                  : "glass-card text-muted-foreground hover:text-foreground"
+                  ? "gradient-primary-bg text-primary-foreground"
+                  : "bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/30"
               }`}
             >
               {cat}
@@ -70,7 +70,7 @@ const Gallery = () => {
           {filtered.map((img, i) => (
             <AnimatedSection key={img.src + filter} delay={i * 0.05}>
               <div
-                className="break-inside-avoid group cursor-pointer overflow-hidden rounded-xl"
+                className="break-inside-avoid group cursor-pointer overflow-hidden rounded-xl border border-border"
                 onClick={() => setLightbox(i)}
               >
                 <img
@@ -94,10 +94,10 @@ const Gallery = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-background/95 flex items-center justify-center p-4"
+            className="fixed inset-0 z-[100] bg-foreground/90 flex items-center justify-center p-4"
             onClick={() => setLightbox(null)}
           >
-            <button className="absolute top-6 right-6 text-foreground" onClick={() => setLightbox(null)}>
+            <button className="absolute top-6 right-6 text-white" onClick={() => setLightbox(null)}>
               <X size={28} />
             </button>
             <motion.img
