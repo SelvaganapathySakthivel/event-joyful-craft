@@ -16,10 +16,10 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/40">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-lg border-b border-border/40 shadow-sm">
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
         <Link to="/" className="flex items-center gap-2">
-          <span className="font-heading text-xl md:text-2xl font-bold gradient-gold-text">
+          <span className="font-heading text-xl md:text-2xl font-bold gradient-primary-text">
             DD Events
           </span>
         </Link>
@@ -30,10 +30,10 @@ const Navbar = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`text-sm font-medium tracking-wide transition-colors duration-300 ${
+              className={`text-sm font-medium tracking-wide transition-colors duration-300 relative ${
                 location.pathname === link.path
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-primary"
+                  ? "text-primary after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[2px] after:bg-primary after:rounded-full"
+                  : "text-muted-foreground hover:text-secondary"
               }`}
             >
               {link.label}
@@ -41,7 +41,7 @@ const Navbar = () => {
           ))}
           <a
             href="tel:6381459317"
-            className="gradient-gold-bg text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 hover:opacity-90 transition-opacity"
+            className="gradient-primary-bg text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 hover:opacity-90 transition-all hover:scale-105"
           >
             <Phone size={14} />
             Call Now
@@ -65,7 +65,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-card border-t border-border/40 overflow-hidden"
+            className="md:hidden bg-background border-t border-border/40 overflow-hidden"
           >
             <div className="flex flex-col gap-1 p-4">
               {navLinks.map((link) => (
@@ -75,8 +75,8 @@ const Navbar = () => {
                   onClick={() => setOpen(false)}
                   className={`py-3 px-4 rounded-lg text-sm font-medium transition-colors ${
                     location.pathname === link.path
-                      ? "text-primary bg-accent"
-                      : "text-muted-foreground hover:text-primary hover:bg-accent"
+                      ? "text-primary bg-primary/5 border-l-2 border-primary"
+                      : "text-muted-foreground hover:text-secondary hover:bg-accent"
                   }`}
                 >
                   {link.label}
@@ -84,7 +84,7 @@ const Navbar = () => {
               ))}
               <a
                 href="tel:6381459317"
-                className="gradient-gold-bg text-primary-foreground px-5 py-3 rounded-full text-sm font-semibold text-center mt-2"
+                className="gradient-primary-bg text-primary-foreground px-5 py-3 rounded-full text-sm font-semibold text-center mt-2"
               >
                 Call Now
               </a>

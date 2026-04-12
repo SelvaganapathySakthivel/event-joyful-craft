@@ -61,16 +61,16 @@ const Services = () => (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((s, i) => (
             <AnimatedSection key={s.title} delay={i * 0.1}>
-              <div className="glass-card rounded-xl overflow-hidden group hover-gold-glow h-full flex flex-col">
+              <div className="bg-card rounded-xl overflow-hidden group border border-border hover:shadow-lg hover:shadow-primary/10 hover:scale-[1.02] transition-all duration-500 h-full flex flex-col">
                 <div className="relative h-56 overflow-hidden">
                   <img src={s.img} alt={s.title} loading="lazy" width={800} height={600} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="font-heading text-xl font-semibold mb-3">{s.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed flex-1">{s.desc}</p>
                   <BookingModal>
-                    <button className="mt-5 gradient-gold-bg text-primary-foreground px-6 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity flex items-center gap-2 w-fit">
+                    <button className="mt-5 gradient-primary-bg text-primary-foreground px-6 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-all hover:scale-105 flex items-center gap-2 w-fit">
                       Book Now <ArrowRight size={14} />
                     </button>
                   </BookingModal>

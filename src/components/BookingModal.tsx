@@ -17,9 +17,9 @@ const BookingModal = ({ children }: { children: ReactNode }) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="glass-card border-border sm:max-w-md">
+      <DialogContent className="bg-card border-border sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="font-heading text-2xl gradient-gold-text">Book Your Event</DialogTitle>
+          <DialogTitle className="font-heading text-2xl gradient-primary-text">Book Your Event</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-4">
           <Input placeholder="Your Name" required className="bg-accent border-border text-foreground placeholder:text-muted-foreground" />
@@ -29,7 +29,7 @@ const BookingModal = ({ children }: { children: ReactNode }) => {
           <Textarea placeholder="Additional details..." rows={3} className="bg-accent border-border text-foreground placeholder:text-muted-foreground" />
           <button
             type="submit"
-            className="gradient-gold-bg text-primary-foreground py-3 rounded-full font-semibold hover:opacity-90 transition-opacity"
+            className="gradient-primary-bg text-primary-foreground py-3 rounded-full font-semibold hover:opacity-90 transition-all hover:scale-[1.02]"
           >
             Submit Booking
           </button>
