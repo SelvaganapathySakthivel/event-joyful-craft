@@ -23,15 +23,16 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
-          dark: "hsl(var(--gold-dark))",
+        "dd-red": {
+          DEFAULT: "hsl(var(--dd-red))",
+          dark: "hsl(var(--dd-red-dark))",
         },
-        navy: {
-          DEFAULT: "hsl(var(--navy))",
-          light: "hsl(var(--navy-light))",
+        "dd-green": {
+          DEFAULT: "hsl(var(--dd-green))",
+          dark: "hsl(var(--dd-green-dark))",
         },
+        "dd-gold": "hsl(var(--dd-gold))",
+        "dd-dark": "hsl(var(--dd-dark))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
