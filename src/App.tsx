@@ -13,6 +13,17 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
+// Admin
+import AdminLayout from "@/components/admin/AdminLayout";
+import AdminLogin from "@/pages/admin/AdminLogin";
+import Dashboard from "@/pages/admin/Dashboard";
+import AdminBookings from "@/pages/admin/AdminBookings";
+import AdminServices from "@/pages/admin/AdminServices";
+import AdminGallery from "@/pages/admin/AdminGallery";
+import AdminContacts from "@/pages/admin/AdminContacts";
+import AdminCustomers from "@/pages/admin/AdminCustomers";
+import AdminSettings from "@/pages/admin/AdminSettings";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -21,19 +32,28 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-        <WhatsAppButton />
+        <Routes>
+          {/* Public Site */}
+          <Route path="/" element={<><Navbar /><main><Index /></main><Footer /><WhatsAppButton /></>} />
+          <Route path="/about" element={<><Navbar /><main><About /></main><Footer /><WhatsAppButton /></>} />
+          <Route path="/services" element={<><Navbar /><main><Services /></main><Footer /><WhatsAppButton /></>} />
+          <Route path="/gallery" element={<><Navbar /><main><Gallery /></main><Footer /><WhatsAppButton /></>} />
+          <Route path="/contact" element={<><Navbar /><main><Contact /></main><Footer /><WhatsAppButton /></>} />
+
+          {/* Admin */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="bookings" element={<AdminBookings />} />
+            <Route path="services" element={<AdminServices />} />
+            <Route path="gallery" element={<AdminGallery />} />
+            <Route path="contacts" element={<AdminContacts />} />
+            <Route path="customers" element={<AdminCustomers />} />
+            <Route path="settings" element={<AdminSettings />} />
+          </Route>
+
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
