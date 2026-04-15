@@ -45,6 +45,12 @@ const Navbar = () => {
             <Phone size={14} />
             Call Now
           </a>
+          <Link
+            to="/admin/login"
+            className="border border-primary text-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-all hover:scale-105"
+          >
+            Admin
+          </Link>
         </div>
 
         {/* Mobile toggle */}
