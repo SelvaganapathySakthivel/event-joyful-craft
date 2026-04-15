@@ -101,12 +101,12 @@ const Index = () => (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s, i) => (
             <AnimatedSection key={s.title} delay={i * 0.1}>
-              <Link to="/services" className="group block bg-card rounded-xl overflow-hidden border border-border hover:shadow-lg hover:shadow-primary/10 hover:scale-[1.02] transition-all duration-500">
-                <div className="relative h-52 overflow-hidden">
+              <Link to="/services" className="group flex flex-col h-full bg-card rounded-xl overflow-hidden border border-border hover:shadow-lg hover:shadow-primary/10 hover:scale-[1.02] transition-all duration-500">
+                <div className="relative h-52 overflow-hidden flex-shrink-0">
                   <img src={s.img} alt={s.title} loading="lazy" width={800} height={600} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
                 </div>
-                <div className="p-5">
+                <div className="p-5 flex-1 flex flex-col">
                   <h3 className="font-heading text-lg font-semibold mb-1">{s.title}</h3>
                   <p className="text-muted-foreground text-sm">{s.desc}</p>
                 </div>
