@@ -93,6 +93,13 @@ const Navbar = () => {
               >
                 Call Now
               </a>
+              <Link
+                to="/admin/login"
+                onClick={() => setOpen(false)}
+                className="border border-primary text-primary px-5 py-3 rounded-full text-sm font-semibold text-center"
+              >
+                Admin
+              </Link>
             </div>
           </motion.div>
         )}
